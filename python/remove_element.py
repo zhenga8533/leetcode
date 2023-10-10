@@ -5,11 +5,16 @@ class Solution(object):
         :type val: int
         :rtype: int
 
-        Runtime: 13 ms (Beats 79.16%)
-        Memory: 13.1 MB (Beats 74.75%)
+        Runtime: 11 ms (Beats 93.22%)
+        Memory: 13.2 MB (Beats 74.75%)
         """
 
-        nums[:] = [num for num in nums if num != val]
+        index = 0
         
-        return len(nums)
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[index] = nums[i]
+                index += 1
+
+        return index
         

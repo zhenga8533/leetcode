@@ -1,16 +1,6 @@
-class Solution(object):
-    def countBits(self, n):
-        """
-        :type n: int
-        :rtype: List[int]
-
-        Runtime: 51 ms (Beats 62.93%)
-        Memory: 17.3 MB (Beats 12.70%)
-        """
-
-        total = [0 for i in range(n + 1)]
-        for i in range(n + 1):
-            total[i] = "{0:b}".format(i).count('1')
-        
-        return total
-        
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        # Runtime: 58 ms (Beats 98.29%)
+        # Memory: 22.9 MB (Beats 98.26%)
+      
+        return [i.bit_count() for i in range(n+1)]

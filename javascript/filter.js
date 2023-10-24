@@ -4,8 +4,15 @@
  * @return {number[]}
  */
 var filter = function(arr, fn) {
-    // Runtime: 35 ms (Beats 99.67%)
-    // Memory: 41.9 MB (Beats 55.51%)
-  
-    return arr.filter(fn)
+    // Runtime: 45 ms (Beats 87.81%)
+    // Memory: 42.4 MB (Beats 7.94%)
+    
+    const filtered = []
+
+    arr.forEach((n, i) => {
+        if (fn(n, i))
+            filtered.push(n)
+    })
+
+    return filtered
 };
